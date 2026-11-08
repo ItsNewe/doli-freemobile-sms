@@ -132,13 +132,14 @@ class FreeMobileSms
 			return $this->setError($langs->transnoentitiesnoconv('FreeMobileSmsErrorUnknownNumber', (string) $this->dest));
 		}
 
-		// POST keeps the key out of the URL logged by getURLContent()
-		$param = http_build_query(array(
+		// POST keeps the key out of the URL logged by getURLContent(). Free only reads a JSON body (form fields give 400).
+		$param = json_encode(array(
 			'user' => $account['login'],
 			'pass' => dolDecrypt($account['key']),
 			'msg' => freemobilesmsApplyTemplate((string) $this->message),
 		));
-		$result = getURLContent(self::API_URL, 'POST', $param, 1, array(), array('https'), 0, -1, 10, 30);
+		$headers = array('Content-Type: application/json');
+		$result = getURLContent(self::API_URL, 'POSTALREADYFORMATED', $param, 1, $headers, array('https'), 0, -1, 10, 30);
 
 		$code = (int) $result['http_code'];
 		if ($code == 200) {
