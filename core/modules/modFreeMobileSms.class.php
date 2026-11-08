@@ -50,7 +50,7 @@ class modFreeMobileSms extends DolibarrModules
 		$this->descriptionlong = "FreeMobileSmsDescriptionLong";
 		$this->editor_name = 'Newe';
 		$this->editor_url = '';
-		$this->version = '1.0.0';
+		$this->version = '1.0.1';
 		$this->const_name = 'MAIN_MODULE_'.dol_strtoupper($this->name);
 		$this->picto = 'phone';
 
