@@ -1,0 +1,46 @@
+# Copyright (C) 2026	Newe	<lobo@arcafin.fr>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+#
+# Module
+#
+ModuleFreeMobileSmsName = Free Mobile SMS
+ModuleFreeMobileSmsDesc = Envoyer des notifications SMS vers vos propres lignes Free Mobile
+FreeMobileSmsDescription = Envoyer des notifications SMS vers vos propres lignes Free Mobile
+FreeMobileSmsDescriptionLong = Moteur d'envoi de SMS utilisant l'API de notification de Free Mobile (gratuite avec un forfait Free Mobile). L'API n'envoie de SMS qu'à la ligne propriétaire de l'identifiant : chaque destinataire doit donc être une des lignes déclarées dans la configuration. À choisir dans Configuration > SMS.
+
+#
+# Setup
+#
+FreeMobileSmsSetup = Configuration de Free Mobile SMS
+FreeMobileSmsSetupHelp = Activez l'option « Notifications par SMS » dans votre Espace Abonné Free Mobile (Mes Options) pour obtenir l'identifiant et la clé d'identification de chaque ligne.
+FreeMobileSmsWarningNotSendMode = Free Mobile n'est pas encore la méthode d'envoi des SMS : choisissez « freemobilesms » dans %s.
+FreeMobileSmsInfoTest = Free Mobile est la méthode d'envoi des SMS. Vous pouvez envoyer un SMS de test depuis %s.
+FreeMobileSmsAccounts = Lignes
+FreeMobileSmsNumber = Numéro de téléphone
+FreeMobileSmsNumberHelp = Numéro de la ligne Free Mobile. Les SMS envoyés à ce numéro utilisent l'identifiant et la clé de cette ligne.
+FreeMobileSmsLogin = Identifiant
+FreeMobileSmsLoginHelp = Identifiant de l'Espace Abonné Free Mobile (8 chiffres)
+FreeMobileSmsApiKey = Clé d'identification
+FreeMobileSmsApiKeyHelp = Clé générée par Free Mobile à l'activation des notifications par SMS. Elle est stockée chiffrée et n'est plus jamais affichée.
+FreeMobileSmsApiKeyStored = Clé enregistrée
+FreeMobileSmsTemplate = Modèle de SMS
+FreeMobileSmsTemplateHelp = Texte envoyé autour de chaque message : __SMS_MESSAGE__ est remplacé par le message. Les variables de substitution standard comme __MYCOMPANY_NAME__ sont utilisables. Sans __SMS_MESSAGE__, les messages sont envoyés tels quels.
+FreeMobileSmsExampleMessage = Rappel : réunion demain à 10h00
+FreeMobileSmsErrorAccountFields = Le numéro, l'identifiant et la clé sont obligatoires
+FreeMobileSmsErrorBadNumber = Le numéro de téléphone %s n'est pas valide
+FreeMobileSmsErrorAccountExists = Une ligne avec le numéro %s existe déjà
+
+#
+# Sending
+#
+FreeMobileSmsErrorUnknownNumber = Free Mobile ne peut envoyer des SMS qu'aux lignes de sa configuration, et %s n'en fait pas partie
+FreeMobileSmsError400 = Free Mobile : un des paramètres obligatoires est manquant
+FreeMobileSmsError402 = Free Mobile : trop de SMS envoyés en trop peu de temps, réessayez plus tard
+FreeMobileSmsError403 = Free Mobile : le service n'est pas activé dans l'Espace Abonné, ou l'identifiant / la clé est incorrect
+FreeMobileSmsError500 = Free Mobile : erreur côté serveur, réessayez plus tard
+FreeMobileSmsErrorHttp = Free Mobile : réponse inattendue (HTTP %s) %s
